@@ -1,0 +1,7 @@
+pytelegrambotapi
+telebot
+google.cloud
+dialogflow
+google-cloud-dialogflow
+schedule
+config
