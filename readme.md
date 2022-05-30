@@ -1,3 +1,1 @@
-# 002
-
-Python bot for telegram
+# Python-Telegram-Bot-002
