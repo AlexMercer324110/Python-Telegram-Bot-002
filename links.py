@@ -17,8 +17,8 @@ print(time.ctime())
 #         bot.pin_chat_message(message.chat.id, send_message.id, disable_notification = True)
 #         config.pin_message_id = send_message.id
 
-# TARGET_GROUP = config.math_group_id
-TARGET_GROUP = config.test_group_id
+TARGET_GROUP = config.math_group_id
+# TARGET_GROUP = config.test_group_id
 
 def send_link(link, password = ''):
     print(time.ctime())
@@ -29,10 +29,6 @@ def send_link(link, password = ''):
 
     if password:
         bot.send_message(TARGET_GROUP, password)
-
-
-
-schedule.every().monday.at('11:29').do(send_link, link = config.mathematics)
 
 
 # Monday
