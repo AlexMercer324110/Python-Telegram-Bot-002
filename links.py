@@ -17,15 +17,18 @@ print(time.ctime())
 #         bot.pin_chat_message(message.chat.id, send_message.id, disable_notification = True)
 #         config.pin_message_id = send_message.id
 
+TARGET_GROUP = config.math_group_id
+# TARGET_GROUP = config.test_group_id
+
 def send_link(link, password = ''):
     print(time.ctime())
-    send_message = bot.send_message(config.math_group_id, link)
-    bot.unpin_chat_message(config.math_group_id, config.pin_message_id)
-    bot.pin_chat_message(config.math_group_id, send_message.id, disable_notification = True)
+    send_message = bot.send_message(TARGET_GROUP, link)
+    bot.unpin_chat_message(TARGET_GROUP, config.pin_message_id)
+    bot.pin_chat_message(TARGET_GROUP, send_message.id, disable_notification = True)
     config.pin_message_id = send_message.id
 
     if password:
-        bot.send_message(config.math_group_id, password)
+        bot.send_message(TARGET_GROUP, password)
 
 # Monday
 schedule.every().monday.at(config.second_time).do(send_link, link = config.informatics)
@@ -52,6 +55,7 @@ schedule.every().friday.at(config.second_time).do(send_link, link = config.chemi
 schedule.every().friday.at(config.thirth_time).do(send_link, link = config.mathematics)
 # schedule.every().friday.at(config.fourth_time).do(send_link, link = config.foreign_literature)
 
+schedule.every(2).seconds.do(send_link, link = config.protection_of_ukraine, password = config.protection_of_ukraine_password)
 
 while True:
     schedule.run_pending()
