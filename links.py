@@ -55,7 +55,7 @@ schedule.every().friday.at(config.second_time).do(send_link, link = config.chemi
 schedule.every().friday.at(config.thirth_time).do(send_link, link = config.mathematics)
 # schedule.every().friday.at(config.fourth_time).do(send_link, link = config.foreign_literature)
 
-schedule.every(2).seconds.do(send_link, link = config.protection_of_ukraine, password = config.protection_of_ukraine_password)
+# schedule.every(2).seconds.do(send_link, link = config.protection_of_ukraine, password = config.protection_of_ukraine_password)
 
 while True:
     schedule.run_pending()
