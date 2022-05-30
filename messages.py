@@ -6,6 +6,9 @@ import os
 API_TOKEN = os.environ.get('TELEGRAM_BOT_API_TOKEN')
 bot = telebot.TeleBot(API_TOKEN, parse_mode = 'MarkDown')
 
+os.environ['TZ'] = 'Europe/Kiev'
+print(time.ctime())
+
 def detect_intent_texts(text, project_id = 's002-nwpa', session_id = 'session003', language_code = 'ru'):
     session_client = dialogflow.SessionsClient()
     session = session_client.session_path(project_id, session_id)

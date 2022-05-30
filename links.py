@@ -7,6 +7,7 @@ import os
 API_TOKEN = os.environ.get('TELEGRAM_BOT_API_TOKEN')
 bot = telebot.TeleBot(API_TOKEN, parse_mode = 'MarkDown');
 
+os.environ['TZ'] = 'Europe/Kiev'
 print(time.ctime())
 
 # @bot.message_handler()
